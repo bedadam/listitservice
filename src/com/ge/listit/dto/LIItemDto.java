@@ -12,7 +12,7 @@ public class LIItemDto implements Serializable{
 	
 	private String phoneNumber;
 	private String eMail;
-	private String description;
+	private String descriptionText;
 	private String price;
 	private String category;
 	private String postTitle;
@@ -56,14 +56,14 @@ public class LIItemDto implements Serializable{
 	/**
 	 * @return the description
 	 */
-	public String getDescription() {
-		return description;
+	public String getDescriptionText() {
+		return descriptionText;
 	}
 	/**
 	 * @param description the description to set
 	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescriptionText(String description) {
+		this.descriptionText = description;
 	}
 	/**
 	 * @return the price

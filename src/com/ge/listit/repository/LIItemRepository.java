@@ -15,6 +15,4 @@ public interface LIItemRepository extends JpaRepository<LIItem, Long>{
 	
 	@Query("SELECT items FROM LIItem items WHERE LOWER(items.user)= LOWER(:user)")
 	public List<LIItem> findByUser(@Param("user") String user);
-
-
 }

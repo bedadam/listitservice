@@ -60,7 +60,7 @@ public class LIServiceImpl {
 		System.out.print("\n In saveItem");
 		LIItem item = new LIItem();
 		item.setCategory(aItem.getCategory());
-		item.setDescription(aItem.getDescription());
+		item.setDescriptionText(aItem.getDescriptionText());
 		item.seteMail(aItem.geteMail());
 		item.setPhoneNumber(aItem.getPhoneNumber());
 		item.setTimeStamp(String.valueOf(System.currentTimeMillis()));
@@ -80,9 +80,23 @@ public class LIServiceImpl {
 		System.out.print("getItems :"+category);
 		
 		List<LIItem> items = listItRepository.findByCategory(category);
+		
 		return getResponse(Status.OK, items);
 	
 	}
+	
+	@GET
+	@Path("/getitem")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	 @Produces({ MediaType.APPLICATION_JSON })
+	public Response getItem(@QueryParam("itemid") Long id) {
+		System.out.print("getItem Id :"+id);
+		
+		LIItem item = listItRepository.findOne(id);
+		return getResponse(Status.OK, item);
+	
+	}
+ 
  
 	public  <T> Response getResponse(Status status, Object result) {		
 		return Response.status(status).entity(result).build();

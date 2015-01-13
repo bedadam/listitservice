@@ -36,8 +36,8 @@ public class LIItem implements Serializable {
 	@Column(name="category")
 	private String category;
 	
-	@Column(name="description")
-	private String description;
+	@Column(name="descriptiontext")
+	private String descriptionText;
 	
 	@Column(name="email")
 	private String eMail;
@@ -121,15 +121,15 @@ public class LIItem implements Serializable {
 	/**
 	 * @return the description
 	 */
-	public String getDescription() {
-		return description;
+	public String getDescriptionText() {
+		return descriptionText;
 	}
 
 	/**
 	 * @param description the description to set
 	 */
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescriptionText(String description) {
+		this.descriptionText = description;
 	}
 
 	/**
